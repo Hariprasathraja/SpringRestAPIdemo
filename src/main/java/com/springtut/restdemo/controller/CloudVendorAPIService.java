@@ -23,4 +23,9 @@ public class CloudVendorAPIService {
         this.cloudVendor=cloudVendor;
         return "Cloud Vendor Updated successfully";
     }
+    @DeleteMapping("{vendorId}")
+    public String deleteCloudVendorDetails(String vendorId){
+        this.cloudVendor=null;
+        return "Cloud Vendor Deleted successfully";
+    }
 }
