@@ -1,9 +1,7 @@
 package com.springtut.restdemo.controller;
 
 import com.springtut.restdemo.model.CloudVendor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/cloudvendor")
@@ -14,5 +12,15 @@ public class CloudVendorAPIService {
     public CloudVendor getCloudVendorDetails(String vendorId){
         return cloudVendor;
 
+    }
+    @PostMapping
+    public String createCloudVendorDetails(@RequestBody CloudVendor cloudVendor){
+        this.cloudVendor=cloudVendor;
+        return "Cloud Vendor Created successfully";
+    }
+    @PutMapping
+    public String updateCloudVendorDetails(@RequestBody CloudVendor cloudVendor){
+        this.cloudVendor=cloudVendor;
+        return "Cloud Vendor Updated successfully";
     }
 }
